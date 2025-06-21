@@ -1,21 +1,33 @@
 :root {
-  --ai-dev-color-bg: #ffffff;
-  --ai-dev-color-text: #0a0a0a;
-  --ai-dev-color-accent: #00FF6F;
+  /* Metropolitan Canopy palette */
+  --color-brutalist-concrete: #4A4A4A;
+  --color-urban-asphalt: #7A7A7A;
+  --color-tropical-canopy: #007D5E;
+  --color-vibrant-sunset-pop: #FF9500;
+  --color-architectural-glass: #E0E0E0;
+  --color-oceanic-depth: #1E5983;
+  --color-polished-steel: #BFBFBF;
+  --color-prosperity-glow: #FFD700;
+
+  /* base tokens */
+  --ai-dev-color-bg: var(--color-architectural-glass);
+  --ai-dev-color-text: var(--color-brutalist-concrete);
+  --ai-dev-color-accent: var(--color-tropical-canopy);
+  --ai-dev-color-highlight: var(--color-vibrant-sunset-pop);
   --ai-dev-radius: 0.75rem;
   --ai-dev-space: 1rem;
   --ai-dev-timing: 180ms ease;
 }
 
 [data-theme="dark"] {
-  --ai-dev-color-bg: #0a0a0a;
-  --ai-dev-color-text: #ffffff;
+  --ai-dev-color-bg: var(--color-brutalist-concrete);
+  --ai-dev-color-text: var(--color-architectural-glass);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --ai-dev-color-bg: #0a0a0a;
-    --ai-dev-color-text: #ffffff;
+    --ai-dev-color-bg: var(--color-brutalist-concrete);
+    --ai-dev-color-text: var(--color-architectural-glass);
   }
 }
 
@@ -59,11 +71,14 @@ body {
   font-size: clamp(2.5rem, 6vw + .5rem, 4.5rem);
   margin-block-end: var(--ai-dev-space);
   font-weight: 700;
+  font-family: "Montserrat", "Inter", system-ui, sans-serif;
+  color: var(--ai-dev-color-accent);
 }
 
 .ai-dev-header p {
   font-size: clamp(1.125rem, 2.5vw, 1.25rem);
   margin: 0;
+  color: var(--color-oceanic-depth);
 }
 
 .ai-dev-intro {
@@ -86,8 +101,9 @@ body {
   align-items: flex-start;
   padding: var(--ai-dev-space);
   border-radius: var(--ai-dev-radius);
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(24px);
+  background: #fff;
+  border: 1px solid var(--color-polished-steel);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .ai-dev-icon {
@@ -101,6 +117,8 @@ body {
   margin-block: 0 0.25rem;
   font-size: clamp(1.125rem, 2vw, 1.25rem);
   font-weight: 700;
+  font-family: "Montserrat", "Inter", system-ui, sans-serif;
+  color: var(--color-oceanic-depth);
 }
 
 .ai-dev-form {
@@ -118,8 +136,8 @@ body {
   border: 2px solid var(--ai-dev-color-accent);
   border-radius: var(--ai-dev-radius);
   flex: 1;
-  background: transparent;
-  color: inherit;
+  background: #fff;
+  color: var(--ai-dev-color-text);
 }
 
 .ai-dev-input:focus {
@@ -131,6 +149,7 @@ body {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 700;
+  font-family: "Montserrat", "Inter", system-ui, sans-serif;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   background: transparent;
@@ -143,7 +162,8 @@ body {
 
 .ai-dev-btn:hover,
 .ai-dev-btn:focus {
-  background: var(--ai-dev-color-accent);
+  background: var(--ai-dev-color-highlight);
+  border-color: var(--ai-dev-color-highlight);
   color: var(--ai-dev-color-bg);
 }
 
