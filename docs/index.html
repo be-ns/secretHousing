@@ -53,29 +53,48 @@
     </section>
 
     <!-- Email Capture -->
-    <form class="ai-dev-form" action="https://formspree.io/f/your-form-id" method="POST">
-      <label for="email" class="ai-dev-sr-only">Email</label>
-      <input class="ai-dev-input" id="email" name="email" type="email" placeholder="your@email.com" required>
-      <button class="ai-dev-btn" type="submit">Keep Me Posted</button>
-    </form>
+    <div id="signup-wrapper" aria-live="polite">
+      <form class="signup" action="https://formspree.io/f/your-form-id" method="POST">
+        <label for="signup-email" class="ai-dev-sr-only">Email</label>
+        <input id="signup-email" name="email" type="email" placeholder="you@example.com" required>
+        <button type="submit">Get Early Access</button>
+      </form>
+    </div>
     </main>
   </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const wrapper = document.getElementById('signup-wrapper');
+      const form = wrapper.querySelector('form.signup');
+      const emailInput = document.getElementById('signup-email');
 
-  <script>
-    const form = document.querySelector('.ai-dev-form');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const res = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        form.innerHTML = '<p>Thanks for signing up! Check your inbox soon.</p>';
-      } else {
-        alert('Sorry, there was a problem.');
+      if (window.matchMedia('(pointer:fine)').matches) {
+        emailInput.setAttribute('autofocus', 'autofocus');
       }
+
+      emailInput.addEventListener('input', () => {
+        if (/^.+@.+\..+$/.test(emailInput.value) || emailInput.value === '') {
+          emailInput.setCustomValidity('');
+        } else {
+          emailInput.setCustomValidity('Please enter a valid email address.');
+        }
+      });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const originalHeight = form.offsetHeight;
+        wrapper.style.height = originalHeight + 'px';
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          wrapper.innerHTML = '<p class="signup-thankyou" tabindex="-1">Thanks—check your inbox!</p>';
+          wrapper.firstElementChild.focus();
+        }
+      });
     });
   </script>
 </body>
