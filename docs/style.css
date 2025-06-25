@@ -176,11 +176,30 @@ body {
   color: var(--ai-dev-color-bg);
 }
 
+/* Container for signup form */
+.signup-container {
+  width: 100%;
+  max-width: 40rem;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* SEO text section */
+.seo-text {
+  max-width: 40rem;
+  margin-inline: auto;
+  padding-block: calc(var(--ai-dev-space) * 2);
+  line-height: 1.7;
+}
+
 .signup {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
   margin-block-end: calc(var(--ai-dev-space) * 4);
+  width: 100%;
 }
 
 .signup input[type="email"] {
