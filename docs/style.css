@@ -395,3 +395,21 @@ body {
 .event-feed li::before {
   content: "";
 }
+
+/* Dashboard section cards */
+.dashboard-section {
+  background: rgba(255, 255, 255, 0.07);
+  padding: var(--ai-dev-space);
+  border-radius: var(--ai-dev-radius);
+  backdrop-filter: blur(6px);
+}
+
+/* Pipeline table styling */
+.pipeline-table thead {
+  background: var(--ai-dev-color-accent);
+  color: var(--ai-dev-color-bg);
+}
+
+.pipeline-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
