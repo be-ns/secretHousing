@@ -59,6 +59,12 @@ body {
   font-weight: 700;
 }
 
+.brand {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+}
+
 .ai-dev-sr-only {
   position: absolute;
   width: 1px;
