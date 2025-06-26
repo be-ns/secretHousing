@@ -1,0 +1,58 @@
+<!-- PipelineTable Component -->
+<style>
+.dashboard-section {
+  background: rgba(255, 255, 255, 0.07);
+  padding: var(--ai-dev-space);
+  border-radius: var(--ai-dev-radius);
+  backdrop-filter: blur(6px);
+}
+.pipeline-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.pipeline-table th,
+.pipeline-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+.pipeline-table thead {
+  background: var(--ai-dev-color-accent);
+  color: var(--ai-dev-color-bg);
+}
+.pipeline-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+</style>
+<section class="pipeline-table dashboard-section full-width">
+  <h2>Pipeline</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Stage</th>
+        <th>IRR</th>
+        <th>CapEx</th>
+        <th>Next Date</th>
+        <th>AI-Risk Flag</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lot 12</td>
+        <td>Feasible</td>
+        <td>19%</td>
+        <td>$8.4M</td>
+        <td>7-03-25</td>
+        <td>Medium</td>
+      </tr>
+      <tr>
+        <td>5th&amp;Main</td>
+        <td>Entitling</td>
+        <td>17%</td>
+        <td>$14.2M</td>
+        <td>6-30-25</td>
+        <td>High</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

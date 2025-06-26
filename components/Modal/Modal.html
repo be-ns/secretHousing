@@ -1,0 +1,55 @@
+<!-- Modal Component -->
+<style>
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal[hidden] {
+  display: none;
+}
+.modal-content {
+  background: var(--ai-dev-color-bg);
+  color: var(--ai-dev-color-text);
+  padding: calc(var(--ai-dev-space) * 2);
+  border-radius: var(--ai-dev-radius);
+  min-width: 300px;
+  max-width: 90vw;
+}
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.modal-actions {
+  display: flex;
+  gap: var(--ai-dev-space);
+  margin-top: var(--ai-dev-space);
+}
+.modal-form label {
+  display: block;
+  margin-bottom: var(--ai-dev-space);
+}
+.modal-form input[type="text"],
+.modal-form input[type="file"] {
+  width: 100%;
+}
+</style>
+<div class="modal" id="addPropertyModal" hidden>
+  <div class="modal-content">
+    <button class="modal-close" data-close>&times;</button>
+    <h2>Add Property</h2>
+    <div class="modal-actions">
+      <button class="ai-dev-btn" id="addManualBtn">Add Manually</button>
+      <button class="ai-dev-btn" id="findForMeBtn">Find a Property for Me</button>
+    </div>
+  </div>
+</div>
