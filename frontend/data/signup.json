@@ -1,0 +1,27 @@
+{
+  "title": "Sign Up - SIGHTHOUND",
+  "menu": {
+    "brand": "S I G H T H O U N D",
+    "brandHref": "/",
+    "links": [
+      { "text": "demo", "href": "/demo" },
+      { "text": "sign up", "href": "/signup" }
+    ]
+  },
+  "heading": "Sign Up",
+  "signup": {
+    "action": "https://formspree.io/f/your-form-id",
+    "label": "Email",
+    "placeholder": "you@example.com",
+    "buttonText": "Get Early Access",
+    "thankYou": "Thanks—check your inbox!"
+  },
+  "seoText": {
+    "headline": "Build the Future, Faster",
+    "paragraphs": [
+      "Sighthound compresses design, permitting, and build timelines by up to 75% with full-stack AI tools for urban infill.",
+      "Optimize your pipeline with an all-in-one team, productize repeatable modules, and panelize to bring prefab speed to every project.",
+      "Join the wait-list and learn how months of coordination turn into days."
+    ]
+  }
+}
