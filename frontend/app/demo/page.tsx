@@ -6,6 +6,7 @@ import ActionQueue from '../../components/ActionQueue'
 import PipelineTable from '../../components/PipelineTable'
 import AddPropertyModal from '../../components/AddPropertyModal'
 import PropertyDetailsModal from '../../components/PropertyDetailsModal'
+import AiCommandBar from '../../components/AiCommandBar'
 import data from '../../data/demo.json'
 
 export default function DemoPage() {
@@ -57,6 +58,7 @@ export default function DemoPage() {
         documentsLabel={modals.propertyDetails.documentsLabel}
         saveText={modals.propertyDetails.saveText}
       />
+      <AiCommandBar pageName="demo" />
     </>
   )
 }
