@@ -31,10 +31,11 @@
 </style>
 <header class="menu-bar">
   <div class="menu-container">
-    <a href="index.html" class="brand">S I G H T H O U N D</a>
+    <a href="{{menu.brandHref}}" class="brand">{{menu.brand}}</a>
     <nav class="menu-items">
-      <a href="demo.html">demo</a>
-      <a href="signup.html">sign up</a>
+      {{#menu.links}}
+      <a href="{{href}}">{{text}}</a>
+      {{/menu.links}}
     </nav>
   </div>
 </header>

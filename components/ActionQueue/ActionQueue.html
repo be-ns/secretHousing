@@ -14,10 +14,10 @@
 .dashboard-main h2 { margin-top: 0; }
 </style>
 <section class="action-queue dashboard-section">
-  <h2>Action Queue</h2>
+  <h2>{{title}}</h2>
   <ul>
-    <li>Review 3 AI feasibilities</li>
-    <li>Accept 1 lender term sheet</li>
-    <li>Set target returns for Lot 12</li>
+    {{#items}}
+    <li>{{.}}</li>
+    {{/items}}
   </ul>
 </section>
