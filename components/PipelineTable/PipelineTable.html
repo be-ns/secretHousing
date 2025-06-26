@@ -24,35 +24,26 @@
 }
 </style>
 <section class="pipeline-table dashboard-section full-width">
-  <h2>Pipeline</h2>
+  <h2>{{title}}</h2>
   <table>
     <thead>
       <tr>
-        <th>Project</th>
-        <th>Stage</th>
-        <th>IRR</th>
-        <th>CapEx</th>
-        <th>Next Date</th>
-        <th>AI-Risk Flag</th>
+        {{#headers}}
+        <th>{{.}}</th>
+        {{/headers}}
       </tr>
     </thead>
     <tbody>
+      {{#rows}}
       <tr>
-        <td>Lot 12</td>
-        <td>Feasible</td>
-        <td>19%</td>
-        <td>$8.4M</td>
-        <td>7-03-25</td>
-        <td>Medium</td>
+        <td>{{project}}</td>
+        <td>{{stage}}</td>
+        <td>{{irr}}</td>
+        <td>{{capex}}</td>
+        <td>{{nextDate}}</td>
+        <td>{{risk}}</td>
       </tr>
-      <tr>
-        <td>5th&amp;Main</td>
-        <td>Entitling</td>
-        <td>17%</td>
-        <td>$14.2M</td>
-        <td>6-30-25</td>
-        <td>High</td>
-      </tr>
+      {{/rows}}
     </tbody>
   </table>
 </section>

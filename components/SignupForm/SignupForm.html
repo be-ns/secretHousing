@@ -54,10 +54,10 @@
 </style>
 <div class="signup-container">
   <div id="signup-wrapper" aria-live="polite">
-    <form class="signup" action="https://formspree.io/f/your-form-id" method="POST">
-      <label for="signup-email" class="ai-dev-sr-only">Email</label>
-      <input id="signup-email" name="email" type="email" placeholder="you@example.com" required>
-      <button type="submit">Get Early Access</button>
+    <form class="signup" action="{{action}}" method="POST">
+      <label for="signup-email" class="ai-dev-sr-only">{{label}}</label>
+      <input id="signup-email" name="email" type="email" placeholder="{{placeholder}}" required>
+      <button type="submit">{{buttonText}}</button>
     </form>
   </div>
 </div>

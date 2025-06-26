@@ -15,8 +15,7 @@
 }
 </style>
 <div class="dashboard-kpis">
-  <div class="kpi">Portfolio KPIs</div>
-  <div class="kpi">$72M Pipeline</div>
-  <div class="kpi">Avg IRR 18.4%</div>
-  <div class="kpi">Risk &darr;</div>
+  {{#kpis}}
+  <div class="kpi">{{.}}</div>
+  {{/kpis}}
 </div>
