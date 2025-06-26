@@ -22,9 +22,8 @@
   <div class="ai-dev-container">
     <nav class="dashboard-top">
       <div class="top-left">
-        <a href="#" class="dashboard-btn">New Project</a>
-        <a href="#" class="dashboard-btn">Upload Parcel</a>
-        <a href="#" class="dashboard-btn">Watch Demo</a>
+        <a href="#" class="dashboard-btn" id="watchDemoBtn">Watch Demo</a>
+        <a href="#" class="dashboard-btn" id="addPropertyBtn">Add Property</a>
       </div>
       <div class="top-right">
         <a href="#" class="dashboard-link">Settings</a>
@@ -100,5 +99,80 @@
       </section>
     </div>
   </div>
+
+  <!-- Add Property modal -->
+  <div class="modal" id="addPropertyModal" hidden>
+    <div class="modal-content">
+      <button class="modal-close" data-close>&times;</button>
+      <h2>Add Property</h2>
+      <div class="modal-actions">
+        <button class="ai-dev-btn" id="addManualBtn">Add Manually</button>
+        <button class="ai-dev-btn" id="findForMeBtn">Find a Property for Me</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property details modal -->
+  <div class="modal" id="propertyDetailsModal" hidden>
+    <div class="modal-content">
+      <button class="modal-close" data-close>&times;</button>
+      <h2>Property Details</h2>
+      <form id="propertyForm" class="modal-form">
+        <label>
+          Address
+          <input type="text" id="propertyAddress" required>
+        </label>
+        <label>
+          Documents
+          <input type="file" id="propertyDocs" multiple>
+        </label>
+        <div class="modal-actions">
+          <button type="submit" class="ai-dev-btn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const addPropertyBtn = document.getElementById('addPropertyBtn');
+    const addPropertyModal = document.getElementById('addPropertyModal');
+    const propertyDetailsModal = document.getElementById('propertyDetailsModal');
+    const addManualBtn = document.getElementById('addManualBtn');
+    const findForMeBtn = document.getElementById('findForMeBtn');
+
+    function open(modal) {
+      modal.removeAttribute('hidden');
+    }
+
+    function close(modal) {
+      modal.setAttribute('hidden', '');
+    }
+
+    document.querySelectorAll('[data-close]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const modal = e.target.closest('.modal');
+        close(modal);
+      });
+    });
+
+    addPropertyBtn.addEventListener('click', e => {
+      e.preventDefault();
+      open(addPropertyModal);
+    });
+
+    function openDetails() {
+      close(addPropertyModal);
+      open(propertyDetailsModal);
+    }
+
+    addManualBtn.addEventListener('click', openDetails);
+    findForMeBtn.addEventListener('click', openDetails);
+
+    document.getElementById('propertyForm').addEventListener('submit', e => {
+      e.preventDefault();
+      close(propertyDetailsModal);
+      alert('Property saved');
+    });
+  </script>
 </body>
 </html>
