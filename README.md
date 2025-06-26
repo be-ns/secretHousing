@@ -51,3 +51,6 @@ jobs:
 ---
 
 Happy publishing!
+
+## Components
+Reusable UI components are stored in the `/components` directory. Each HTML file contains markup and scoped styles for a single element such as the MenuBar or SignupForm.
