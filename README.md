@@ -54,3 +54,20 @@ Happy publishing!
 
 ## Components
 Reusable UI components are stored in the `/components` directory. Each HTML file contains markup and scoped styles for a single element such as the MenuBar or SignupForm.
+
+## API Server
+
+This repo includes a small Express server that exposes page content via JSON. To run it locally:
+
+```bash
+npm install
+npm start
+```
+
+The server provides a single endpoint:
+
+```
+GET /api/content/:pageName
+```
+
+which returns the contents of `content/<pageName>.json`.
