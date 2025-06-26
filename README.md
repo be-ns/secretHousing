@@ -64,10 +64,19 @@ npm install
 npm start
 ```
 
-The server provides a single endpoint:
+The server provides a couple endpoints:
 
 ```
 GET /api/content/:pageName
 ```
 
 which returns the contents of `content/<pageName>.json`.
+
+```
+POST /api/edit/:pageName
+```
+
+Sends the current JSON and a user prompt to the Gemini API to modify the page
+content. The request body must include a `prompt` field. The updated JSON is
+saved back to `content/<pageName>.json` and returned in the response. Set the
+`GEMINI_API_KEY` environment variable so the server can call the API.
