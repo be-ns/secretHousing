@@ -437,3 +437,49 @@ body {
 .pipeline-table tbody tr:nth-child(even) {
   background: rgba(255, 255, 255, 0.05);
 }
+
+/* Basic modal styling */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: var(--ai-dev-color-bg);
+  color: var(--ai-dev-color-text);
+  padding: calc(var(--ai-dev-space) * 2);
+  border-radius: var(--ai-dev-radius);
+  min-width: 300px;
+  max-width: 90vw;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.modal-actions {
+  display: flex;
+  gap: var(--ai-dev-space);
+  margin-top: var(--ai-dev-space);
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: var(--ai-dev-space);
+}
+
+.modal-form input[type="text"],
+.modal-form input[type="file"] {
+  width: 100%;
+}
