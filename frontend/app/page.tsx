@@ -2,6 +2,7 @@ import MenuBar from '../components/MenuBar'
 import Hero from '../components/Hero'
 import FeatureCard from '../components/FeatureCard'
 import SignupForm from '../components/SignupForm'
+import AiCommandBar from '../components/AiCommandBar'
 import data from '../data/index.json'
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
           </main>
         </div>
       </div>
+      <AiCommandBar pageName="index" />
     </>
   )
 }

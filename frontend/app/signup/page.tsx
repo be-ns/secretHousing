@@ -1,5 +1,6 @@
 import MenuBar from '../../components/MenuBar'
 import SignupForm from '../../components/SignupForm'
+import AiCommandBar from '../../components/AiCommandBar'
 import data from '../../data/signup.json'
 
 export default function SignupPage() {
@@ -21,6 +22,7 @@ export default function SignupPage() {
           </section>
         </main>
       </div>
+      <AiCommandBar pageName="signup" />
     </>
   )
 }
