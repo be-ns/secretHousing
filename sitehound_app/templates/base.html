@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title if title else 'Sighthound Design Studios' }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1 class="site-title"><a href="{{ url_for('list_plants') }}">Sighthound</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('list_plants') }}">Home</a></li>
+                    <li><a href="{{ url_for('add_plant') }}">Add Plant</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; {{ datetime.utcnow().year }} Sighthound Design Studios. All rights reserved.</p>
+    </footer>
+    {# Include carousel script for pages that feature a carousel #}
+    <script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
+</body>
+</html>

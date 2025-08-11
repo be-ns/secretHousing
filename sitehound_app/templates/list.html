@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="page-title">Available Plants</h2>
+{% if plants %}
+<div class="carousel">
+    <button class="carousel-button prev">&#8249;</button>
+    <div class="carousel-track">
+        {% for plant in plants %}
+        <div class="plant-card">
+            <div class="image-wrapper">
+                {% if plant.image_filename %}
+                <img src="{{ url_for('uploaded_file', filename=plant.image_filename) }}" alt="{{ plant.name }}">
+                {% else %}
+                <div class="placeholder-image">No Image</div>
+                {% endif %}
+            </div>
+            <div class="plant-info">
+                <h3>{{ plant.name }}</h3>
+                {% if plant.species %}<p class="species">{{ plant.species }}</p>{% endif %}
+                {% if plant.classification %}<p class="classification">Classification: {{ plant.classification }}</p>{% endif %}
+                {% if plant.price is not none %}<p class="price">${{ '%.2f'|format(plant.price) }}</p>{% endif %}
+                <a class="view-link" href="{{ url_for('view_plant', plant_id=plant.id) }}">View details</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-button next">&#8250;</button>
+</div>
+{% else %}
+<p>No plants listed yet. Be the first to <a href="{{ url_for('add_plant') }}">add a plant</a>!</p>
+{% endif %}
+{% endblock %}

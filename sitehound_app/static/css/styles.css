@@ -1,0 +1,350 @@
+/*
+ * SiteHound styles
+ *
+ * These styles emphasise an organic, hand‑crafted aesthetic. A subtle
+ * watercolour background provides warmth while translucent panels and
+ * rounded corners evoke layers of paper. Throughout the site we avoid
+ * harsh lines and overly modern motifs in favour of soft edges and
+ * generous whitespace. Font selections favour readability with a touch
+ * of character.
+ */
+
+/* Root variables */
+:root {
+    --primary-color: #4a6849; /* forest green */
+    --secondary-color: #7e9b74; /* muted sage */
+    --background-blur: rgba(255, 255, 255, 0.7);
+    --card-background: rgba(255, 255, 255, 0.8);
+    --text-color: #333;
+    --max-width: 960px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    color: var(--text-color);
+    background: url('../images/watercolor_bg.png') center/cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-title a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+main {
+    flex: 1;
+    padding: 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+}
+
+.page-title {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Plant grid */
+.plant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.plant-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.1s;
+    display: flex;
+    flex-direction: column;
+}
+
+.plant-card:hover {
+    transform: translateY(-3px);
+}
+
+.image-wrapper {
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #999;
+    font-style: italic;
+}
+
+.placeholder-image.large {
+    height: 300px;
+}
+
+.plant-info {
+    padding: 0.8rem 1rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plant-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.plant-info p {
+    margin: 0 0 0.3rem 0;
+    line-height: 1.4;
+}
+
+.species {
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+.classification {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.price {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: var(--primary-color);
+}
+
+.view-link {
+    margin-top: auto;
+    align-self: flex-start;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.view-link:hover {
+    border-color: var(--primary-color);
+}
+
+/* Form styles */
+.plant-form {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group textarea {
+    padding: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn.back {
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+/* Detail page */
+.plant-detail .detail-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.plant-detail .detail-image {
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.plant-detail .detail-image img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.plant-detail .detail-info {
+    flex: 2 1 300px;
+}
+
+.flash-messages {
+    margin-bottom: 1rem;
+}
+
+.flash {
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.flash.success {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #256029;
+    border: 1px solid #4caf50;
+}
+
+.flash.error {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #b71c1c;
+    border: 1px solid #f44336;
+}
+
+/* Carousel styles for plant listing */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-button:hover {
+    opacity: 1;
+}
+
+.carousel-button.prev {
+    left: 0.5rem;
+}
+
+.carousel-button.next {
+    right: 0.5rem;
+}
