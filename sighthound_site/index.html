@@ -1,49 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sighthound Design Studios</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sighthound – Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="index.html" class="site-title">Sighthound</a>
-            <ul class="nav-links">
-                <li><a href="store.html">Shop</a></li>
-                <li><a href="san-mateo-landscaping.html">Landscaping</a></li>
-                <li><a href="cart.html">Cart<span class="cart-count">0</span></a></li>
-            </ul>
-        </div>
-    </header>
-    <main>
-        <section class="hero-card">
-            <img src="assets/images/monstera.png" alt="Lush monstera plant">
-            <div class="hero-content">
-                <h1>Welcome to Sighthound Design Studios</h1>
-                <p>Curated mature plants and trees for your unique space.</p>
-                <a href="store.html" class="btn">Shop Now</a>
-            </div>
-        </section>
-        <section class="product-carousel">
-            <h2>Featured Plants</h2>
-            <div class="carousel">
-                <button class="carousel-button prev">&#8249;</button>
-                <div class="carousel-track" id="carousel-track">
-                    <!-- Plant cards rendered via JS -->
-                </div>
-                <button class="carousel-button next">&#8250;</button>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; <span id="year"></span> Sighthound Design Studios.</p>
-    </footer>
-    <script>
-    // Update year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <script src="js/app.js"></script>
+  <header>
+    <div class="logo" aria-label="Sighthound botanicals home">Sighthound</div>
+    <nav>
+      <a href="store.html">Shop</a>
+      <a href="san-mateo-landscaping.html">Projects</a>
+      <a href="#about">About</a>
+      <a href="cart.html">Cart<span class="cart-count">0</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Cultivate Your Space</h1>
+        <p>Discover unique, curated plants that bring calm and life into your home.</p>
+        <a href="store.html" class="button button-primary">Shop Now</a>
+        <a href="san-mateo-landscaping.html" class="button button-secondary">View Landscaping</a>
+      </div>
+      <div class="hero-image">
+        <img src="assets/hero-branch.png" alt="Illustrated branch with green leaves" width="600" height="400">
+      </div>
+    </section>
+  </main>
+  <script src="js/scripts.js"></script>
 </body>
 </html>

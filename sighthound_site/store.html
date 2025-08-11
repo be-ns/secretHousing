@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop – Sighthound Design Studios</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sighthound – Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="index.html" class="site-title">Sighthound</a>
-            <ul class="nav-links">
-                <li><a href="store.html">Shop</a></li>
-                <li><a href="san-mateo-landscaping.html">Landscaping</a></li>
-                <li><a href="cart.html">Cart<span class="cart-count">0</span></a></li>
-            </ul>
+  <header>
+    <div class="logo" aria-label="Sighthound botanicals home"><a href="index.html" style="text-decoration:none;color:inherit;">Sighthound</a></div>
+    <nav>
+      <a href="store.html">Shop</a>
+      <a href="san-mateo-landscaping.html">Projects</a>
+      <a href="#about">About</a>
+      <a href="cart.html">Cart<span class="cart-count">0</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="products-section" id="shop" aria-labelledby="products-title">
+      <h2 id="products-title">Featured Plants</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="assets/ficus.png" alt="Ficus benjamina tree in ceramic pot" width="400" height="500">
+          <div class="card-content">
+            <h3>Ficus benjamina</h3>
+            <div class="price"><span>$25.00</span></div>
+            <button class="add-to-cart" aria-label="Add Ficus benjamina to cart">Add to Cart</button>
+          </div>
         </div>
-    </header>
-    <main>
-        <h2 class="page-title">Our Collection</h2>
-        <div class="carousel">
-            <button class="carousel-button prev">&#8249;</button>
-            <div class="carousel-track" id="carousel-track">
-                <!-- Plant cards rendered via JS -->
-            </div>
-            <button class="carousel-button next">&#8250;</button>
+        <div class="card">
+          <img src="assets/succulent.png" alt="Succulent plant in modern pot" width="400" height="500">
+          <div class="card-content">
+            <h3>Aeonium urbicum</h3>
+            <div class="price"><del>$18.00</del><span>$14.40</span></div>
+            <button class="add-to-cart" aria-label="Add Aeonium urbicum to cart">Add to Cart</button>
+          </div>
         </div>
-    </main>
-    <footer>
-        <p>&copy; <span id="year"></span> Sighthound Design Studios.</p>
-    </footer>
-    <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <script src="js/app.js"></script>
+        <div class="card">
+          <img src="assets/ficus.png" alt="Ficus lyrata tree in ceramic pot" width="400" height="500">
+          <div class="card-content">
+            <h3>Ficus lyrata</h3>
+            <div class="price"><span>$32.00</span></div>
+            <button class="add-to-cart" aria-label="Add Ficus lyrata to cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
